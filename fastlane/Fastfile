@@ -21,6 +21,25 @@ platform :android do
     gradle(task: "test")
   end
 
+  desc "Lint"
+  lane :lint do |options|
+    flavor = (options[:flavor] ? options[:flavor] : "sit1")
+    gradle(
+      task: "clean lint",
+      flavor: flavor,
+      #build_type: 'debug'
+    )
+  end
+
+  desc "Unit Test"
+  lane :ut do |options|
+    flavor = (options[:flavor] ? options[:flavor] : "sit1")
+    gradle(
+      task: "clean test",
+      flavor: flavor,
+      #build_type: 'debug'
+    )
+  end
 
   desc "Assembles Prod Debug Builds"
   lane :betaDebug do |options|
@@ -28,7 +47,7 @@ platform :android do
     gradle(
       task: "clean assemble",
       flavor: flavor, #"prod",
-      build_type: 'debug'
+      #build_type: 'debug'
     )
   end
 
