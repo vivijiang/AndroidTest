@@ -21,11 +21,26 @@ or alternatively using `brew cask install fastlane`
 fastlane android test
 ```
 Runs all the tests
+### android lint
+```
+fastlane android lint
+```
+Lint
+### android ut
+```
+fastlane android ut
+```
+Unit Test
 ### android betaDebug
 ```
 fastlane android betaDebug
 ```
 Assembles Prod Debug Builds
+### android copyapk
+```
+fastlane android copyapk
+```
+Copy artifacts
 ### android beta
 ```
 fastlane android beta
