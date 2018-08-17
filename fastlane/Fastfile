@@ -27,7 +27,7 @@ platform :android do
     gradle(
       task: "clean lint",
       flavor: flavor,
-      #build_type: 'debug'
+      build_type: 'debug'
     )
   end
 
