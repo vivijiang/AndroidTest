@@ -51,6 +51,14 @@ platform :android do
     )
   end
 
+  desc "Copy artifacts"
+  lane :copyapk do
+    copy_artifacts(
+      target_path: "artifacts/MyApplication",
+      artifacts: ["app/build/outputs/apk/**/**/*.apk"]
+    )
+  end
+
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
     gradle(
