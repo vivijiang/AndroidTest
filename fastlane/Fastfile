@@ -27,7 +27,7 @@ platform :android do
     gradle(
       task: "clean lint",
       flavor: flavor,
-      #build_type: 'debug'
+      build_type: 'debug'
     )
   end
 
@@ -48,6 +48,14 @@ platform :android do
       task: "clean assemble",
       flavor: flavor, #"prod",
       #build_type: 'debug'
+    )
+  end
+
+  desc "Copy artifacts"
+  lane :copyapk do
+    copy_artifacts(
+      target_path: "artifacts/MyApplication",
+      artifacts: ["app/build/outputs/apk/**/**/*.apk"]
     )
   end
 
